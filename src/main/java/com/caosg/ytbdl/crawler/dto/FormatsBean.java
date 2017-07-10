@@ -1,4 +1,4 @@
-package com.caosg.ytbdl.service.dto;
+package com.caosg.ytbdl.crawler.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -19,7 +19,7 @@ public class FormatsBean {
     private int height;
     private int width;
     private String ext;
-    private int filesize;
+    private long filesize;
     @JsonProperty("format_id")
     private String formatId;
 
@@ -79,11 +79,11 @@ public class FormatsBean {
         this.ext = ext;
     }
 
-    public int getFilesize() {
+    public long getFilesize() {
         return filesize;
     }
 
-    public void setFilesize(int filesize) {
+    public void setFilesize(long filesize) {
         this.filesize = filesize;
     }
 

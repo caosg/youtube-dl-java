@@ -1,8 +1,8 @@
-package com.caosg.ytbdl.service;
+package com.caosg.ytbdl.crawler;
 
-import com.caosg.ytbdl.service.dto.FormatsBean;
-import com.caosg.ytbdl.service.dto.ThumbnailsBean;
-import com.caosg.ytbdl.service.dto.VideoInfo;
+import com.caosg.ytbdl.crawler.dto.FormatsBean;
+import com.caosg.ytbdl.crawler.dto.ThumbnailsBean;
+import com.caosg.ytbdl.crawler.dto.VideoInfo;
 import com.caosg.ytbdl.service.util.StreamGobbler;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -115,7 +115,7 @@ public class YoutubeDL {
         YoutubeDLRequest request = new YoutubeDLRequest(url);
         request.setOption("simulate");
         request.setOption("dump-json");
-        request.setOption("no-playlist");
+        //request.setOption("no-playlist");
         YoutubeDLResponse response = YoutubeDL.execute(request);
 
         // Parse result
@@ -153,27 +153,6 @@ public class YoutubeDL {
         return info.getThumbnails();
     }
 
-    /**
-     * List categories
-     * @param url Video url
-     * @return list of category
-     * @throws YoutubeDLException
-     */
-    public static List<String> getCategories(String url) throws YoutubeDLException {
-        VideoInfo info = getVideoInfo(url);
-        return info.getTags();
-    }
-
-    /**
-     * List tags
-     * @param url Video url
-     * @return list of tag
-     * @throws YoutubeDLException
-     */
-    public static List<String> getTags(String url) throws YoutubeDLException {
-        VideoInfo info = getVideoInfo(url);
-        return info.getTags();
-    }
 
     /**
      * Get command executable or path to the executable

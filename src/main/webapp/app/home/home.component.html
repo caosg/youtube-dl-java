@@ -3,9 +3,14 @@
         <span class="hipster img-fluid img-rounded"></span>
     </div>
     <div class="col-md-9">
-        <h1 class="display-4" jhiTranslate="home.title">Welcome, Java Hipster!</h1>
-        <p class="lead" jhiTranslate="home.subtitle">This is your homepage</p>
-
+        <h2 class="display-4" jhiTranslate="home.title">Welcome, Java Hipster!</h2>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="输入要下载的视频网址" aria-describedby="basic-addon2" [(ngModel)]="videoUrl">
+            <span class="input-group-btn">
+             <button class="btn btn-primary" type="button" (click)="parse()">解析!</button>
+            </span>
+        </div>
+        <br>
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span *ngIf="account" jhiTranslate="home.logged.message"

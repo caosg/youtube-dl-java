@@ -1,4 +1,4 @@
-package com.caosg.ytbdl.service.dto;
+package com.caosg.ytbdl.crawler.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

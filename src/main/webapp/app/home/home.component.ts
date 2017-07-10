@@ -15,7 +15,7 @@ import { Account, LoginModalService, Principal } from '../shared';
 export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
-
+    videoUrl: '';
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
@@ -44,5 +44,9 @@ export class HomeComponent implements OnInit {
 
     login() {
         this.modalRef = this.loginModalService.open();
+    }
+
+    parseVideo() {
+
     }
 }

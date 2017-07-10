@@ -1,0 +1,86 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "extractor",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "40"
+        },
+        {
+            "fieldName": "protocol",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uploader",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "duration",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "vid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "format",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "255"
+        },
+        {
+            "fieldName": "url",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "width",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "height",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ext",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "16"
+        },
+        {
+            "fieldName": "filesize",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "thumbnail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tags",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "webpageUrl",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170710071106",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "video",
+    "pagination": "pagination"
+}

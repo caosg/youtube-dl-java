@@ -1,10 +1,11 @@
-package com.caosg.ytbdl.service.dto;
+package com.caosg.ytbdl.crawler.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by csg on 2017/7/9.
@@ -17,12 +18,12 @@ public class VideoInfo {
     private String extractor;
     private String protocol;
     @JsonProperty("_filename")
-    private String Filename;
+    private String filename;
     @JsonProperty("requested_subtitles")
     private Object requestedSubtitles;
     private int height;
     private String uploader;
-    private int duration;
+    private float duration;
     @JsonProperty("format_id")
     private String formatId;
     private String id;
@@ -41,7 +42,7 @@ public class VideoInfo {
     private String ext;
     @JsonProperty("uploader_url")
     private String uploaderUrl;
-    private int filesize;
+    private long filesize;
     @JsonProperty("webpage_url")
     private String webpageUrl;
     private String fulltitle;
@@ -51,7 +52,7 @@ public class VideoInfo {
     @JsonProperty("playlist_index")
     @JsonIgnore
     private Object playlistIndex;
-    private List<String> tags;
+    private Set<String> tags;
     private List<ThumbnailsBean> thumbnails;
     private List<FormatsBean> formats;
 
@@ -80,11 +81,11 @@ public class VideoInfo {
     }
 
     public String getFilename() {
-        return Filename;
+        return filename;
     }
 
-    public void setFilename(String Filename) {
-        this.Filename = Filename;
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public Object getRequestedSubtitles() {
@@ -111,11 +112,11 @@ public class VideoInfo {
         this.uploader = uploader;
     }
 
-    public int getDuration() {
+    public float getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(float duration) {
         this.duration = duration;
     }
 
@@ -215,11 +216,11 @@ public class VideoInfo {
         this.uploaderUrl = uploaderUrl;
     }
 
-    public int getFilesize() {
+    public long getFilesize() {
         return filesize;
     }
 
-    public void setFilesize(int filesize) {
+    public void setFilesize(long filesize) {
         this.filesize = filesize;
     }
 
@@ -263,11 +264,11 @@ public class VideoInfo {
         this.playlistIndex = playlistIndex;
     }
 
-    public List<String> getTags() {
+    public Set<String> getTags() {
         return tags;
     }
 
-    public void setTags(List<String> tags) {
+    public void setTags(Set<String> tags) {
         this.tags = tags;
     }
 
@@ -293,7 +294,7 @@ public class VideoInfo {
             "displayId='" + displayId + '\'' +
             ", extractor='" + extractor + '\'' +
             ", protocol='" + protocol + '\'' +
-            ", Filename='" + Filename + '\'' +
+            ", Filename='" + filename + '\'' +
             ", requestedSubtitles=" + requestedSubtitles +
             ", height=" + height +
             ", uploader='" + uploader + '\'' +

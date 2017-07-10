@@ -1,0 +1,35 @@
+{
+    "youtubedlApp": {
+        "video" : {
+            "home": {
+                "title": "Videos",
+                "createLabel": "Create a new Video",
+                "createOrEditLabel": "Create or edit a Video"
+            },
+            "created": "A new Video is created with identifier {{ param }}",
+            "updated": "A Video is updated with identifier {{ param }}",
+            "deleted": "A Video is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Video {{ id }}?"
+            },
+            "detail": {
+                "title": "Video"
+            },
+            "extractor": "Extractor",
+            "protocol": "Protocol",
+            "uploader": "Uploader",
+            "duration": "Duration",
+            "vid": "Vid",
+            "format": "Format",
+            "title": "Title",
+            "url": "Url",
+            "width": "Width",
+            "height": "Height",
+            "ext": "Ext",
+            "filesize": "Filesize",
+            "thumbnail": "Thumbnail",
+            "tags": "Tags",
+            "webpageUrl": "Webpage Url"
+        }
+    }
+}

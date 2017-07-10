@@ -1,0 +1,81 @@
+
+<div *ngIf="video">
+    <h2><span jhiTranslate="youtubedlApp.video.detail.title">Video</span> {{video.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="youtubedlApp.video.extractor">Extractor</span></dt>
+        <dd>
+            <span>{{video.extractor}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.protocol">Protocol</span></dt>
+        <dd>
+            <span>{{video.protocol}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.uploader">Uploader</span></dt>
+        <dd>
+            <span>{{video.uploader}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.duration">Duration</span></dt>
+        <dd>
+            <span>{{video.duration}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.vid">Vid</span></dt>
+        <dd>
+            <span>{{video.vid}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.format">Format</span></dt>
+        <dd>
+            <span>{{video.format}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.title">Title</span></dt>
+        <dd>
+            <span>{{video.title}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.url">Url</span></dt>
+        <dd>
+            <span>{{video.url}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.width">Width</span></dt>
+        <dd>
+            <span>{{video.width}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.height">Height</span></dt>
+        <dd>
+            <span>{{video.height}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.ext">Ext</span></dt>
+        <dd>
+            <span>{{video.ext}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.filesize">Filesize</span></dt>
+        <dd>
+            <span>{{video.filesize}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.thumbnail">Thumbnail</span></dt>
+        <dd>
+            <img src="{{video.thumbnail}}"></img>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.tags">Tags</span></dt>
+        <dd>
+            <span>{{video.tags}}</span>
+        </dd>
+        <dt><span jhiTranslate="youtubedlApp.video.webpageUrl">Webpage Url</span></dt>
+        <dd>
+            <span>{{video.webpageUrl}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'video/'+ video.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
