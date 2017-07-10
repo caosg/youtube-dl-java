@@ -29,7 +29,10 @@
             "filesize": "Filesize",
             "thumbnail": "Thumbnail",
             "tags": "Tags",
-            "webpageUrl": "Webpage Url"
+            "webpageUrl": "Webpage Url",
+            "error": {
+                "webpageUrl": "视频网址不能为空"
+            }
         }
     }
 }

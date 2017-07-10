@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { JhiEventManager } from 'ng-jhipster';
+import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
 import { Account, LoginModalService, Principal } from '../shared';
 
@@ -19,7 +19,8 @@ export class HomeComponent implements OnInit {
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
-        private eventManager: JhiEventManager
+        private eventManager: JhiEventManager,
+        private alertService: JhiAlertService
     ) {
     }
 
@@ -47,6 +48,8 @@ export class HomeComponent implements OnInit {
     }
 
     parseVideo() {
-
+        if (this.videoUrl.length === 0) {
+            this.alertService.error('youtubedlApp.video.error.webpageUrl');
+        }
     }
 }
