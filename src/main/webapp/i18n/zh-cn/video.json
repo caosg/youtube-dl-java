@@ -13,25 +13,27 @@
                 "question": "Are you sure you want to delete Video {{ id }}?"
             },
             "detail": {
-                "title": "Video"
+                "title": "视频"
             },
-            "extractor": "Extractor",
-            "protocol": "Protocol",
-            "uploader": "Uploader",
-            "duration": "Duration",
+            "play": "播放",
+            "extractor": "来源",
+            "protocol": "协议",
+            "uploader": "上传者",
+            "duration": "时长",
             "vid": "Vid",
-            "format": "Format",
-            "title": "Title",
-            "url": "Url",
-            "width": "Width",
-            "height": "Height",
-            "ext": "Ext",
-            "filesize": "Filesize",
-            "thumbnail": "Thumbnail",
-            "tags": "Tags",
-            "webpageUrl": "Webpage Url",
+            "format": "格式",
+            "title": "标题",
+            "url": "播放地址",
+            "width": "长度",
+            "height": "宽度",
+            "ext": "格式",
+            "filesize": "大小",
+            "thumbnail": "封面",
+            "tags": "标签",
+            "webpageUrl": "视频地址",
             "error": {
-                "webpageUrl": "视频网址不能为空"
+                "webpageUrl": "视频网址不能为空",
+                "playIsNull": "暂不支持播放"
             }
         }
     }

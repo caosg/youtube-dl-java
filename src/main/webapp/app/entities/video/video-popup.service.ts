@@ -29,6 +29,21 @@ export class VideoPopupService {
         }
     }
 
+    play(component: Component, id: number): NgbModalRef {
+        if (this.isOpen) {
+            return;
+        }
+        this.isOpen = true;
+
+        if (id) {
+            this.videoService.find(id).subscribe((video) => {
+                this.videoModalRef(component, video);
+            });
+        } else {
+            return this.videoModalRef(component, new Video());
+        }
+    }
+
     videoModalRef(component: Component, video: Video): NgbModalRef {
         const modalRef = this.modalService.open(component, { size: 'lg', backdrop: 'static'});
         modalRef.componentInstance.video = video;

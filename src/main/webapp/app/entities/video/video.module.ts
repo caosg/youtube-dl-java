@@ -14,6 +14,8 @@ import {
     videoRoute,
     videoPopupRoute,
     VideoResolvePagingParams,
+    VideoPlayComponent,
+    VideoPlayPopupComponent
 } from './';
 
 const ENTITY_STATES = [
@@ -33,6 +35,8 @@ const ENTITY_STATES = [
         VideoDeleteDialogComponent,
         VideoPopupComponent,
         VideoDeletePopupComponent,
+        VideoPlayComponent,
+        VideoPlayPopupComponent
     ],
     entryComponents: [
         VideoComponent,
@@ -40,6 +44,8 @@ const ENTITY_STATES = [
         VideoPopupComponent,
         VideoDeleteDialogComponent,
         VideoDeletePopupComponent,
+        VideoPlayComponent,
+        VideoPlayPopupComponent
     ],
     providers: [
         VideoService,

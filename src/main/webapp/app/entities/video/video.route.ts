@@ -8,6 +8,7 @@ import { VideoComponent } from './video.component';
 import { VideoDetailComponent } from './video-detail.component';
 import { VideoPopupComponent } from './video-dialog.component';
 import { VideoDeletePopupComponent } from './video-delete-dialog.component';
+import { VideoPlayPopupComponent } from './video-play.component';
 
 import { Principal } from '../../shared';
 
@@ -72,6 +73,16 @@ export const videoPopupRoute: Routes = [
     {
         path: 'video/:id/edit',
         component: VideoPopupComponent,
+        data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'youtubedlApp.video.home.title'
+        },
+        canActivate: [UserRouteAccessService],
+        outlet: 'popup'
+    },
+    {
+        path: 'video/:id/play',
+        component: VideoPlayPopupComponent,
         data: {
             authorities: ['ROLE_USER'],
             pageTitle: 'youtubedlApp.video.home.title'
