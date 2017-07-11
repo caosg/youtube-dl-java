@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 
@@ -20,7 +21,8 @@ export class HomeComponent implements OnInit {
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
-        private alertService: JhiAlertService
+        private alertService: JhiAlertService,
+        private router: Router
     ) {
     }
 
@@ -51,5 +53,6 @@ export class HomeComponent implements OnInit {
         if (this.videoUrl.length === 0) {
             this.alertService.error('youtubedlApp.video.error.webpageUrl');
         }
+        this.router.navigate(['/video/parse', this.videoUrl]);
     }
 }

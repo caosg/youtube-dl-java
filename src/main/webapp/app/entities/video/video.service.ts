@@ -32,6 +32,12 @@ export class VideoService {
         });
     }
 
+    parseVideo(videoUrl: String): Observable<Video> {
+        return this.http.get(`${this.resourceUrl}/parse`, { params: { url: `${videoUrl}` } }).map((res: Response) => {
+            return res.json();
+        });
+    }
+
     query(req?: any): Observable<ResponseWrapper> {
         const options = createRequestOption(req);
         return this.http.get(this.resourceUrl, options)

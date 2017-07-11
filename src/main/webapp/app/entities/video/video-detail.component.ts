@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 import { JhiEventManager  } from 'ng-jhipster';
@@ -19,14 +20,21 @@ export class VideoDetailComponent implements OnInit, OnDestroy {
     constructor(
         private eventManager: JhiEventManager,
         private videoService: VideoService,
+        private location: Location,
         private route: ActivatedRoute
     ) {
     }
 
     ngOnInit() {
+
         this.subscription = this.route.params.subscribe((params) => {
-            this.load(params['id']);
+                if (this.location.path().match('parse')) {
+                    this.parseVideo(params['videoUrl']);
+                } else {
+                    this.load(params['id']);
+                }
         });
+
         this.registerChangeInVideos();
     }
 
@@ -35,6 +43,13 @@ export class VideoDetailComponent implements OnInit, OnDestroy {
             this.video = video;
         });
     }
+
+    parseVideo(videoUrl) {
+        this.videoService.parseVideo(videoUrl).subscribe((video) => {
+            this.video = video;
+        });
+    }
+
     previousState() {
         window.history.back();
     }

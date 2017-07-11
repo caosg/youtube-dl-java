@@ -47,6 +47,14 @@ export const videoRoute: Routes = [
             pageTitle: 'youtubedlApp.video.home.title'
         },
         canActivate: [UserRouteAccessService]
+    }, {
+        path: 'video/parse/:videoUrl',
+        component: VideoDetailComponent,
+        data: {
+            authorities: ['ROLE_USER'],
+            pageTitle: 'youtubedlApp.video.home.title'
+        },
+        canActivate: [UserRouteAccessService]
     }
 ];
 
