@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 
@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
-        private activatedRoute: ActivatedRoute,
         private router: Router
     ) {
     }
@@ -50,6 +49,6 @@ export class HomeComponent implements OnInit {
     }
 
     parseVideo() {
-      this.router.navigate(['/video', 1 ]);
+        this.router.navigate(['/video', 1 ]);
     }
 }
