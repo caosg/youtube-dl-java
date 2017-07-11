@@ -4,10 +4,11 @@
     </div>
     <div class="col-md-9">
         <h2 class="display-4" jhiTranslate="home.title">Welcome, Java Hipster!</h2>
+        <jhi-alert></jhi-alert>
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="输入要下载的视频网址" aria-describedby="basic-addon2" [(ngModel)]="videoUrl">
+            <input type="text" class="form-control" placeholder="输入要下载的视频网址"  aria-describedby="basic-addon2" [(ngModel)]="videoUrl">
             <span class="input-group-btn">
-             <button class="btn btn-primary" type="button" (click)="parseVideo()">解析!</button>
+             <button class="btn btn-primary" type="button" (click)="parseVideo()">解析</button>
             </span>
         </div>
         <br>
