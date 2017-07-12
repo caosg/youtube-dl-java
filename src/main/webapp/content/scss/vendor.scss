@@ -8,3 +8,13 @@ eg $input-color: red;
 
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/font-awesome/scss/font-awesome';
+
+.card-margin {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    width: 350px;
+}
+.album {
+    padding-top: 1rem;
+    background-color: #f7f7f7;
+}

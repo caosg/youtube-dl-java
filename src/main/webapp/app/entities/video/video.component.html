@@ -1,9 +1,10 @@
-<div>
+<div class="container">
     <h2>
         <span jhiTranslate="youtubedlApp.video.home.title">Videos</span>
-        <button class="btn btn-primary float-right create-video" [routerLink]="['/', { outlets: { popup: ['video-new'] } }]">
+        <button class="btn btn-primary float-right create-video"
+                [routerLink]="['/', { outlets: { popup: ['video-new'] } }]">
             <span class="fa fa-plus"></span>
-            <span  jhiTranslate="youtubedlApp.video.home.createLabel">
+            <span jhiTranslate="youtubedlApp.video.home.createLabel">
             Create new Video
             </span>
         </button>
@@ -12,48 +13,96 @@
     <div class="row">
     </div>
     <br/>
-    <div class="table-responsive" *ngIf="videos">
-        <table class="table table-striped">
-            <thead>
-            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="extractor"><span jhiTranslate="youtubedlApp.video.extractor">Extractor</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="protocol"><span jhiTranslate="youtubedlApp.video.protocol">Protocol</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="uploader"><span jhiTranslate="youtubedlApp.video.uploader">Uploader</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="duration"><span jhiTranslate="youtubedlApp.video.duration">Duration</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="vid"><span jhiTranslate="youtubedlApp.video.vid">Vid</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="format"><span jhiTranslate="youtubedlApp.video.format">Format</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="title"><span jhiTranslate="youtubedlApp.video.title">Title</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="url"><span jhiTranslate="youtubedlApp.video.url">Url</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="width"><span jhiTranslate="youtubedlApp.video.width">Width</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="height"><span jhiTranslate="youtubedlApp.video.height">Height</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="ext"><span jhiTranslate="youtubedlApp.video.ext">Ext</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="filesize"><span jhiTranslate="youtubedlApp.video.filesize">Filesize</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="thumbnail"><span jhiTranslate="youtubedlApp.video.thumbnail">Thumbnail</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="tags"><span jhiTranslate="youtubedlApp.video.tags">Tags</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="webpageUrl"><span jhiTranslate="youtubedlApp.video.webpageUrl">Webpage Url</span> <span class="fa fa-sort"></span></th>
-            <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let video of videos ;trackBy: trackId">
-                <td><a [routerLink]="['../video', video.id ]">{{video.id}}</a></td>
-                <td>{{video.extractor}}</td>
-                <td>{{video.protocol}}</td>
-                <td>{{video.uploader}}</td>
-                <td>{{video.duration}}</td>
-                <td>{{video.vid}}</td>
-                <td>{{video.format}}</td>
-                <td>{{video.title}}</td>
-                <td>{{video.url}}</td>
-                <td>{{video.width}}</td>
-                <td>{{video.height}}</td>
-                <td>{{video.ext}}</td>
-                <td>{{video.filesize}}</td>
-                <td>{{video.thumbnail}}</td>
-                <td>{{video.tags}}</td>
-                <td>{{video.webpageUrl}}</td>
-                <td class="text-right">
+    <!--<div class="table-responsive" *ngIf="videos">-->
+    <!--<table class="table table-striped">-->
+    <!--<thead>-->
+    <!--<tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">-->
+    <!--<th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="extractor"><span jhiTranslate="youtubedlApp.video.extractor">Extractor</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="protocol"><span jhiTranslate="youtubedlApp.video.protocol">Protocol</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="uploader"><span jhiTranslate="youtubedlApp.video.uploader">Uploader</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="duration"><span jhiTranslate="youtubedlApp.video.duration">Duration</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="vid"><span jhiTranslate="youtubedlApp.video.vid">Vid</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="format"><span jhiTranslate="youtubedlApp.video.format">Format</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="title"><span jhiTranslate="youtubedlApp.video.title">Title</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="url"><span jhiTranslate="youtubedlApp.video.url">Url</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="width"><span jhiTranslate="youtubedlApp.video.width">Width</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="height"><span jhiTranslate="youtubedlApp.video.height">Height</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="ext"><span jhiTranslate="youtubedlApp.video.ext">Ext</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="filesize"><span jhiTranslate="youtubedlApp.video.filesize">Filesize</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="thumbnail"><span jhiTranslate="youtubedlApp.video.thumbnail">Thumbnail</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="tags"><span jhiTranslate="youtubedlApp.video.tags">Tags</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th jhiSortBy="webpageUrl"><span jhiTranslate="youtubedlApp.video.webpageUrl">Webpage Url</span> <span-->
+    <!--class="fa fa-sort"></span></th>-->
+    <!--<th></th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr *ngFor="let video of videos ;trackBy: trackId">-->
+    <!--<td><a [routerLink]="['../video', video.id ]">{{video.id}}</a></td>-->
+    <!--<td>{{video.extractor}}</td>-->
+    <!--<td>{{video.protocol}}</td>-->
+    <!--<td>{{video.uploader}}</td>-->
+    <!--<td>{{video.duration}}</td>-->
+    <!--<td>{{video.vid}}</td>-->
+    <!--<td>{{video.format}}</td>-->
+    <!--<td>{{video.title}}</td>-->
+    <!--<td>{{video.url}}</td>-->
+    <!--<td>{{video.width}}</td>-->
+    <!--<td>{{video.height}}</td>-->
+    <!--<td>{{video.ext}}</td>-->
+    <!--<td>{{video.filesize}}</td>-->
+    <!--<td>{{video.thumbnail}}</td>-->
+    <!--<td>{{video.tags}}</td>-->
+    <!--<td>{{video.webpageUrl}}</td>-->
+    <!--<td class="text-right">-->
+    <!--<div class="btn-group flex-btn-group-container">-->
+    <!--<button type="submit"-->
+    <!--[routerLink]="['../video', video.id ]"-->
+    <!--class="btn btn-info btn-sm">-->
+    <!--<span class="fa fa-eye"></span>-->
+    <!--<span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>-->
+    <!--</button>-->
+    <!--<button type="submit"-->
+    <!--[routerLink]="['/', { outlets: { popup: 'video/'+ video.id + '/edit'} }]"-->
+    <!--replaceUrl="true"-->
+    <!--class="btn btn-primary btn-sm">-->
+    <!--<span class="fa fa-pencil"></span>-->
+    <!--<span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>-->
+    <!--</button>-->
+    <!--<button type="submit"-->
+    <!--[routerLink]="['/', { outlets: { popup: 'video/'+ video.id + '/delete'} }]"-->
+    <!--replaceUrl="true"-->
+    <!--class="btn btn-danger btn-sm">-->
+    <!--<span class="fa fa-remove"></span>-->
+    <!--<span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>-->
+    <!--</button>-->
+    <!--</div>-->
+    <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+    <!--</table>-->
+    <!--</div>-->
+    <div class="container album" *ngIf="videos">
+        <div class="row">
+            <div *ngFor="let video of videos ;trackBy: trackId" class="card card-margin">
+                <img class="card-img-top" src="{{video.thumbnail}}" alt="{{video.format}}">
+                <div class="card-block">
+                    <p class="card-text text-truncate">{{video.title}}</p>
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
                                 [routerLink]="['../video', video.id ]"
@@ -76,17 +125,17 @@
                             <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
                     </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-        <div *ngIf="videos && videos.length">
-            <div class="row justify-content-center">
-                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
-            </div>
-            <div class="row justify-content-center">
-                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+                </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="videos && videos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page"
+                            (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
 </div>
