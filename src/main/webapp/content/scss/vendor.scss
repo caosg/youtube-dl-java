@@ -18,3 +18,33 @@ eg $input-color: red;
     padding-top: 1rem;
     background-color: #f7f7f7;
 }
+.video-img {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+.play {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+.card-img-top:hover .video-img{
+    opacity: 0.6;
+}
+.card-img-top:hover .play {
+    opacity: 1;
+}
+.start {
+    background-color: #41af11;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+

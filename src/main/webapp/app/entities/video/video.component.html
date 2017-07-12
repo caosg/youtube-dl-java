@@ -100,7 +100,15 @@
     <div class="container album" *ngIf="videos">
         <div class="row">
             <div *ngFor="let video of videos ;trackBy: trackId" class="card card-margin">
-                <img class="card-img-top" src="{{video.thumbnail}}" alt="{{video.format}}">
+                <div class="card-img-top">
+                    <a [routerLink]="['/', { outlets: { popup: 'video/'+ video.id + '/play'} }]">
+                        <img class="video-img" src="{{video.thumbnail}}" alt="{{video.format}}">
+                        <div class="play">
+                            <div class="start">播放</div>
+                        </div>
+                    </a>
+                </div>
+
                 <div class="card-block">
                     <p class="card-text text-truncate">{{video.title}}</p>
                     <div class="btn-group flex-btn-group-container">
